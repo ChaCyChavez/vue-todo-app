@@ -1,0 +1,360 @@
+@base: 		#e6e6e6;
+@fcolor: 	#39393a;
+@wcolor: 	#ff8552;
+@scolor: 	#297373;
+@acolor: 	#e9d758;
+@white: 	#ffffff;
+
+#app {
+	text-align: center;
+}
+
+#app-title {
+  color: @fcolor;
+  font-size: 50px;
+  text-align: right;
+  float: left;
+  font-family: 'Cabin';
+  font-weight: bold;
+}
+
+#app-header {
+  padding: 10px 30px;
+  position: fixed;
+  width: 100%;
+  background-color: @white;
+  box-shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+#search {
+  margin: 12px 60px;
+  text-align: right;
+
+  input[type="search"] {
+    width: 400px;
+    font-family: 'Cabin';
+    font-size: 20px;
+    color: @fcolor;
+    padding: 7px 12px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  input[type="search"]:focus {
+    outline: none;
+  }
+}
+
+#todo-list {
+  padding: 50px;
+  padding-top: 100px;
+}
+
+#create-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: @scolor;
+  border-radius: 10px;
+  border: .05rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  line-height: 63px;
+}
+
+.todo-title {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Cabin';
+  color: @fcolor;
+}
+
+.todo-container {
+  padding: 2%;
+  width: 44%;
+  float: left;
+  border: .05rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
+  margin-left: 1%;
+  border-radius: 3px;
+}
+
+#completed-todo {
+  .todo-container;
+}
+
+#pending-todo {
+  .todo-container;  
+}
+
+
+.card {
+  padding: 0;
+  margin: 10px 2%;
+  border: .05rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  text-align: center;
+  width: 44%;
+  float: left;
+  background-color: @white;
+}
+
+.extra-button {
+  margin: 0;
+  padding: 10px 10px 0 1px;
+  text-align: right;
+}
+
+.header {
+  font-size: 'Cabin';
+  color: @fcolor;
+  font-size: 14px;
+  font-weight: light;
+}
+
+
+
+.card-main {
+  margin: 0 5px 15px 5px;
+  font-family: 'Cabin';
+  word-wrap: break-word;
+
+  .title {
+    font-size: 26px;
+    font-weight: bold;
+    color: @fcolor;
+  }
+
+  .description {
+    font-size: 20px;
+    color: @fcolor - 11111;
+  }
+}
+
+.card-button {
+  width: 100%;
+
+  button:hover {
+    background: @scolor;
+    transition: background .5s;
+    transition-timing-function: ease-in-out;
+
+    span.a {
+      display: inline;
+      transition: display .5s;
+      color: #fff;
+    }
+    span.b {
+      display: none;
+    }
+  }
+
+  button {
+    span.a {
+      display: none;
+    }
+
+    span.b {
+      display: inline;
+    }
+  }
+}
+
+.input-field {
+  font-family: 'Cabin';
+  font-size: 26px;
+  color: @fcolor;
+  padding: 7px 12px;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.main-button {
+  font-family: 'Cabin';
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #fff;
+  color: teal;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  text-decoration: none;
+  border: solid 1px teal;
+  font-size: 20px;
+}
+
+button.main-button {
+  cursor: pointer;
+}
+
+span.main-button {
+  cursor: default;
+}
+
+button.main-button.disabled:hover {
+  background-color: #fff;
+}
+
+.icon {
+  font-size: 20px
+}
+
+a.remove-button {
+  color: @wcolor;
+  .icon;
+}
+
+a.edit-button {
+  color: @scolor;
+  .icon;
+}
+
+.edit-form {
+  margin-top: 29px;
+  .header {
+    margin-bottom: 5px;
+  }
+
+  input {
+    width: 85%;
+    margin-bottom: 10px;
+    .input-field;
+  }
+}
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 500px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+}
+
+.modal-header {
+  margin-top: 0;
+  color: #42b983;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.modal-body {
+  margin: 20px 0;
+  color: @fcolor;
+  
+  div {
+    margin: 15px;
+  }
+
+  input {
+    padding: 10px;
+    width: 400px;
+    font-size: 26px;
+    .input-field;
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
+
+button.modal-default-button {
+  display: inline-block;
+  width: 245px;
+  background-color: @scolor;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  font-family: 'Cabin';
+  font-size: 18px;
+}
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+@media only screen and (max-width: 780px) {
+  #app-header {
+    padding: 10px;
+  }
+
+  #app-title {
+    text-align: center;
+    float: none;
+  }
+
+  #search {
+    margin: 12px;
+    text-align: center;
+  }
+
+  #app-body {
+    padding: 50px;
+    padding-top: 175px;
+  }
+
+  #completed-todo, #pending-todo {
+    margin-right: 1%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #completed-todo, #pending-todo {
+    margin-right: 1%;
+  }
+
+  .card {
+    width: 95%
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  #completed-todo, #pending-todo {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  #search input[type="search"] {
+    width: 90%;
+  }
+
+}
